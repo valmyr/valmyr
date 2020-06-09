@@ -6,7 +6,7 @@ int main(){
 	printf("Informe a quantidade de iteracoes >> ");scanf("%f",&n);
 	printf("Informe o valor de x >>");scanf("%f",&x);
 	
-	for(int i = 0;i < n; i++){
+	for(int i = 0;i < n; i+=2){
 		serie += pow_custom(x,i)/fatorial(i);
 	}
 	printf("serie >> %f",serie);
