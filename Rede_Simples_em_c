@@ -15,22 +15,22 @@ void Exibir(float **m, int linhas, int colunas);
 
 int main(){
   float **x, **w,**s,**y,**e;
-  x = Alocar_Matriz(1, 2);
-  w = Alocar_Matriz(2, 2);
-  y = Alocar_Matriz(1, 2);
-  y[0][0] = .02;
-  y[0][1] = .05;
-  Pesos_Aleatorios(w, 2, 2);
-  x[0][0] = 0.05;
+  x = Alocar_Matriz(1, 2);//x = entradas
+  w = Alocar_Matriz(2, 2);//w = pesos
+  y = Alocar_Matriz(1, 2);//y = saida || alvo
+  y[0][0] = .02;//alvos
+  y[0][1] = .05;//alvos
+  Pesos_Aleatorios(w, 2, 2);//pesos iniciados aleatoriamente
+  x[0][0] = 0.05;//entradas
   x[0][1] = 0.1;
-  for(int i = 0; i < 100; i++){
-    s = Mult(x, w, 1, 2, 2);//x*w
-    tanh_(s,1,2);
-    e = Erro_Derivado(y,s,1,2);
-    e = converter_matriz_erro(e,1,2);//2x1
+  for(int i = 0; i < 100; i++){//treinamento
+    s = Mult(x, w, 1, 2, 2);//EntradasXPesos
+    tanh_(s,1,2);//função tangente hiperbolica
+    e = Erro_Derivado(y,s,1,2);//erro = alvo - saida da rede
+    e = converter_matriz_erro(e,1,2);//
     e = Mult(e,x,2,1,2);
-    Atualizacao_pesos(e, w, 2,2);
-    Exibir(s,1,2);
+    Atualizacao_pesos(e, w, 2,2);//atualização de pesos
+    Exibir(s,1,2);//exibir saida
 
   }
 
@@ -112,3 +112,4 @@ void Exibir(float **m, int linhas, int colunas){
         printf("\n");
     }
 }
+//
