@@ -112,4 +112,3 @@ void Exibir(float **m, int linhas, int colunas){
         printf("\n");
     }
 }
-//
