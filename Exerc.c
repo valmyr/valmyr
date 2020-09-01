@@ -3,7 +3,7 @@
 int **Alocar_Matriz(int linhas, int colunas);//Alocacao dinamica de matrizes
 void Exibir_Matriz(int **m, int linhas, int colunas);
 int main(){
-	int **Matriz, **Matriz_Transpo, linhas, colunas, somatorio = 0, somatoriotrasposta = 0;
+	int **Matriz, **Matriz_Transpo, linhas, colunas, somatorio = 0, somatoriotransposta = 0;
 	printf("Informe a quantidade de linhas da matriz >> ");scanf("%d",&linhas);
 	printf("Informe a quantidade de colunas da matriz >> ");scanf("%d",&colunas);
 	printf("Dimesoes [%d]x[%d]\n",linhas,colunas);
@@ -12,7 +12,7 @@ int main(){
 	for(int i = 0; i < linhas; i++){
 		for(int j = 0; j < colunas; j++){
 			printf("Indece [%d][%d] >> ",i,j);scanf("%d",&Matriz[i][j]);
-		    Matriz_Transpo[j][i] = Matriz[i][j];//matriz trasposta
+		    Matriz_Transpo[j][i] = Matriz[i][j];//matriz transposta
 		}
 	}
 	printf("Matriz :\n");
@@ -25,10 +25,10 @@ int main(){
 		somatorio+=Matriz[0][i];
 	}
 	for(int i = 0; i < linhas; i++){
-		somatoriotrasposta+=Matriz[i][0];
+		somatoriotransposta+=Matriz[i][0];
 	}
 	printf("\nSomatorio das colunas da primeira linha da matriz = %d",somatorio);	
-	printf("\nSomatorio das linhas da primeira coluna da matriz transposta = %d",somatoriotrasposta);
+	printf("\nSomatorio das linhas da primeira coluna da matriz transposta = %d",somatoriotransposta);
 	
 }
 int **Alocar_Matriz(int linhas, int colunas){
