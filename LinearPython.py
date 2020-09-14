@@ -43,7 +43,7 @@ def matriz_Nula(m):
                 return False
     return True
 def main():
-    #Dimensão da matriz
+    #Dimenso~es da matriz
     ta = int(input("Informe o tamanho da matriz: "))
     m = np.empty([ta,ta], dtype = int)
     #linhas
