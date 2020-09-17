@@ -1,3 +1,0 @@
-C:/Users/Valmyr Ferreira/CLionProjects/untitled7/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-C:/Users/Valmyr Ferreira/CLionProjects/untitled7/cmake-build-debug/CMakeFiles/untitled7.dir
-C:/Users/Valmyr Ferreira/CLionProjects/untitled7/cmake-build-debug/CMakeFiles/edit_cache.dir
