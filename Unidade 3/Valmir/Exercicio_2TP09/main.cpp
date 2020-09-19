@@ -78,29 +78,25 @@ Rational::Rational(int numerador, int denominador){
     set_denominador(denominador);
 }
 Rational Rational::Dividir(Rational F1, Rational F2){
-    //Instaciando o objeto que receberar o resultado da divisão de f1/f2
-    Rational FR;
     //Cálculo da divisão
-    FR.numerador = F1.numerador * F2.denominador;
-    FR.denominador = F1.denominador * F2.numerador;
+    numerador = F1.numerador * F2.denominador;
+    denominador = F1.denominador * F2.numerador;
     //simplificando divisão
-    MDC(FR);
+    MDC(*this);
     //retornando objeto
-    FR.sinal();
-    return FR;
+    this->sinal();
+    return *this;
 }
 Rational Rational::Multiplicar(Rational F1, Rational F2){
-    //Instaciando o objeto que receberar o resultado da multiplicação de f1*f2
-    Rational FR;
     //Cálculo
-    FR.numerador = F1.numerador * F2.numerador;
-    FR.denominador = F1.denominador * F2.denominador;
+    numerador = F1.numerador * F2.numerador;
+    denominador = F1.denominador * F2.denominador;
     //simplificando
     //e passando por refêrencia o Objeto para que não precise usar return
-    MDC(FR);
+    MDC(*this);
     //retonando objeto
-    FR.sinal();
-    return FR;
+    this->sinal();
+    return *this;
 }
 void Rational::set_numerador(int numerador){
     //atribuindo valores ao atributo da class
