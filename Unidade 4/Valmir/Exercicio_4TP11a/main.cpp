@@ -6,7 +6,7 @@ using namespace std;
 int main(){
     Relogio r1;
     cout.fill('0');
-    r1.setHora(23,59,59);
+    r1.setHora(16,48,59);
     int hora, minuto, segundo;
     for(int i = 0; i < 999;i++) {
         r1.getHora(hora, minuto, segundo);
