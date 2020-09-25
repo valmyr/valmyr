@@ -12,7 +12,7 @@ public:
     Relogio();
 
     void setHora(int, int, int);
-    Relogio getHora();
+    Relogio getHora(int &, int &, int &);
 
     void set_hora(int );
     void set_minuto(int );
