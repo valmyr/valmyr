@@ -12,7 +12,7 @@ public:
     Relogio();
 
     void setHora(int, int, int);
-    Relogio getHora(int &, int &, int &);
+    Relogio getHora(int &, int &,int &);
 
     void set_hora(int );
     void set_minuto(int );
@@ -23,6 +23,5 @@ public:
     int get_segundo();
 
     void atualizar();
-    void mostrar_hora();
 };
 #endif
