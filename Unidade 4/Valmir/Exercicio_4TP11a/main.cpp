@@ -9,8 +9,8 @@ int main(){
     r1.setHora(23,59,59);
     int hora, minuto, segundo;
     for(int i = 0; i < 999;i++) {
-        r1.get_hora();
-        r1.atualizar(hora, minuto, segundo);
+        r1.get_hora(hora, minuto, segundo);
+        r1.atualizar();
     	cout<<setw(2)<<hora<<":"<<setw(2)<<minuto<<":"<<setw(2)<<segundo<<endl;
         system("cls");
     }
