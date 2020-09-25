@@ -2,7 +2,7 @@
 #include <iomanip>
 #include <cstdlib>
 using namespace std;
-#include "Relogio.cpp"
+#include "./Relogio.cpp"
 int main(){
     Relogio r1;
     cout.fill('0');
