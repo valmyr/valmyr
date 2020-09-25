@@ -30,8 +30,10 @@ void Relogio::setHora(int hora, int minuto, int segundo) {
     this->minuto = minuto;
     this->segundo = segundo;
 }
-Relogio Relogio::getHora() {
-    return *this;
+Relogio Relogio::getHora(int &hora, int &minuto, int &segundos) {
+    hora = this->hora;
+    minutos = this->minuto;
+    segundo - this->segundos;
 }
 void Relogio::atualizar() {
     if(segundo < 59){
@@ -47,9 +49,4 @@ void Relogio::atualizar() {
             }
         }
     }
-}
-
-void Relogio::mostrar_hora(){
-    cout.fill('0');
-    cout<<setw(2)<<hora<<":"<<setw(2)<<minuto<<":"<<setw(2)<<segundo<<endl;
 }

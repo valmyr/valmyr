@@ -18,8 +18,13 @@ um objeto dessa classe seja inicializado com valores quando ele for declarado.
 O construtor deve conter valores-padrão no caso de nenhum inicializador ser fornecido.
  Forneça funções-membro public que realizam cada uma das tarefas a seguir:
 	a) Multiplicar dois números Rational.
+<<<<<<< Updated upstream
 	b) Dividir dois números Rational. Adicione à classe anterior chamada Rational as 
 seguintes funcionalidades:
+=======
+	b) Dividir dois números Rational.
+Adicione à classe anterior chamada Rational as seguintes funcionalidades:
+>>>>>>> Stashed changes
 	a)Imprimir os números Rational na forma a/b, onde a é o numerador e b é o denominador.
 	b)Imprimir os números Rational em formato de ponto flutuante.
 Obs.: Crie um programa para testar a classe.
@@ -77,6 +82,7 @@ Rational::Rational(int numerador, int denominador){
     set_numerador(numerador);
     set_denominador(denominador);
 }
+<<<<<<< Updated upstream
 Rational Rational::dividir(Rational f1, Rational f2){
     //instaciando o objeto que receberar o resultado da divisão de f1/f2
     Rational fr;
@@ -101,6 +107,32 @@ Rational Rational::multiplicar(Rational f1, Rational f2){
     //retonando objeto
     fr.sinal();
     return fr;
+=======
+Rational Rational::Dividir(Rational F1, Rational F2){
+    //Instaciando o objeto que receberar o resultado da divisão de f1/f2
+    Rational FR;
+    //Cálculo da divisão
+    FR.numerador = F1.numerador * F2.denominador;
+    FR.denominador = F1.denominador * F2.numerador;
+    //simplificando divisão
+    MDC(FR);
+    //retornando objeto
+    FR.sinal();
+    return FR;
+}
+Rational Rational::Multiplicar(Rational F1, Rational F2){
+    //Instaciando o objeto que receberar o resultado da multiplicação de f1*f2
+    Rational FR;
+    //Cálculo
+    FR.numerador = F1.numerador * F2.numerador;
+    FR.denominador = F1.denominador * F2.denominador;
+    //simplificando
+    //e passando por refêrencia o Objeto para que não precise usar return
+    MDC(FR);
+    //retonando objeto
+    FR.sinal();
+    return FR;
+>>>>>>> Stashed changes
 }
 void Rational::set_numerador(int numerador){
     //atribuindo valores ao atributo da class
@@ -206,7 +238,11 @@ int main() {
         fr =  f1.multiplicar(f1,f2);
     }
     //exibindo resultado
+<<<<<<< Updated upstream
     fr.exibir();
+=======
+    FR.Exibir();
+>>>>>>> Stashed changes
     //interação com o usuário
     cout<<endl<<"Deseja finalizar?"<<endl;
     cout<<"[1] Sim"<<endl<<"[2] Nao"<<endl<<">>";
