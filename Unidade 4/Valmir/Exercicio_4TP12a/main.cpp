@@ -30,7 +30,6 @@ int main() {
                 Ar[ar-1].aumentaTemp();
                 break;
             case 3:
-                delete Ar;
                 return 0;
             default:
                 cout<<"Opcao invalida";
