@@ -20,7 +20,6 @@ float Arcondicionado::ambienteTemp(){
     return fabs(sensorTemp - varTemp);
 }
 void Arcondicionado::aumentaTemp(){
-    cout<<varPot<<endl;
     if(varPot <= 0){
         cout<<"Ops, Arcondicionado em espera."<<endl;
         return;
