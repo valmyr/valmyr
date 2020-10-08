@@ -1,7 +1,7 @@
 '''ENUNCIADO
 Escreva um programa em Python que calcule a aproximação do valor de π através da fórmula abaixo, considerando os n primeiros termos:
 
-π2=21×23×43×45×65×67×87×89...
+π/2=2/1×2/3×4/3×4/5×6/5×6/7×8/7×8/9...
 
 ENTRADA
 
