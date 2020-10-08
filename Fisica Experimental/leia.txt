@@ -1,0 +1,2 @@
+crie um vetor v  = [num1,num2,num3...,numN]
+chame a função e passe esse vetor como parâmetro main(v)
