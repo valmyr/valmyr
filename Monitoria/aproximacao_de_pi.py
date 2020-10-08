@@ -1,3 +1,15 @@
+'''ENUNCIADO
+Escreva um programa em Python que calcule a aproximação do valor de π através da fórmula abaixo, considerando os n primeiros termos:
+
+π2=21×23×43×45×65×67×87×89...
+
+ENTRADA
+
+O valor de n: quantidade de termos
+
+SAÍDA
+
+O valor aproximado de π com 5 casas decimais.'''
 n = int(input())
 num = 2
 den = 1
