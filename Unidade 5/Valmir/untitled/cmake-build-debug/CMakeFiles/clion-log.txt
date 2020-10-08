@@ -1,0 +1,41 @@
+"C:\Program Files\JetBrains\CLion 2020.1.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" "F:\TP-20203\Exercícios\Unidade 5\Valmir\untitled"
+-- The C compiler identification is GNU 6.3.0
+-- The CXX compiler identification is GNU 6.3.0
+-- Check for working C compiler: C:/MinGW/bin/gcc.exe
+-- Check for working C compiler: C:/MinGW/bin/gcc.exe -- broken
+CMake Error at C:/Program Files/JetBrains/CLion 2020.1.1/bin/cmake/win/share/cmake-3.16/Modules/CMakeTestCCompiler.cmake:60 (message):
+  The C compiler
+
+    "C:/MinGW/bin/gcc.exe"
+
+  is not able to compile a simple test program.
+
+  It fails with the following output:
+
+    Change Dir: F:/TP-20203/ExercÃ­cios/Unidade 5/Valmir/untitled/cmake-build-debug/CMakeFiles/CMakeTmp
+    
+    Run Build Command(s):C:/MinGW/bin/mingw32-make.exe cmTC_fd3eb/fast && C:/MinGW/bin/mingw32-make.exe -f CMakeFiles\cmTC_fd3eb.dir\build.make CMakeFiles/cmTC_fd3eb.dir/build
+    mingw32-make.exe[1]: Entering directory 'F:/TP-20203/ExercÃ�cios/Unidade 5/Valmir/untitled/cmake-build-debug/CMakeFiles/CMakeTmp'
+    Building C object CMakeFiles/cmTC_fd3eb.dir/testCCompiler.c.obj
+    C:\MinGW\bin\gcc.exe    -o CMakeFiles\cmTC_fd3eb.dir\testCCompiler.c.obj   -c "F:\TP-20203\Exercâ”œÂ¡cios\Unidade 5\Valmir\untitled\cmake-build-debug\CMakeFiles\CMakeTmp\testCCompiler.c"
+    gcc.exe: error: F:\TP-20203\Exerc+Ã­cios\Unidade 5\Valmir\untitled\cmake-build-debug\CMakeFiles\CMakeTmp\testCCompiler.c: No such file or directory
+    gcc.exe: fatal error: no input files
+    compilation terminated.
+    CMakeFiles\cmTC_fd3eb.dir\build.make:64: recipe for target 'CMakeFiles/cmTC_fd3eb.dir/testCCompiler.c.obj' failed
+    mingw32-make.exe[1]: *** [CMakeFiles/cmTC_fd3eb.dir/testCCompiler.c.obj] Error 1
+    mingw32-make.exe[1]: Leaving directory 'F:/TP-20203/ExercÃ�cios/Unidade 5/Valmir/untitled/cmake-build-debug/CMakeFiles/CMakeTmp'
+    Makefile:120: recipe for target 'cmTC_fd3eb/fast' failed
+    mingw32-make.exe: *** [cmTC_fd3eb/fast] Error 2
+    
+    
+
+  
+
+  CMake will not be able to correctly generate this project.
+Call Stack (most recent call first):
+  CMakeLists.txt:2 (project)
+
+
+-- Configuring incomplete, errors occurred!
+See also "F:/TP-20203/ExercÃ­cios/Unidade 5/Valmir/untitled/cmake-build-debug/CMakeFiles/CMakeOutput.log".
+See also "F:/TP-20203/ExercÃ­cios/Unidade 5/Valmir/untitled/cmake-build-debug/CMakeFiles/CMakeError.log".
