@@ -13,4 +13,4 @@ while(i < n):
         else:
             num+=2
         j+=1
-print("{:f} {:.5f}".format(pi))
+print("{:.5f}".format(pi))
