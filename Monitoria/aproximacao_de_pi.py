@@ -10,14 +10,14 @@ O valor de n: quantidade de termos
 SAÍDA
 
 O valor aproximado de π com 5 casas decimais.'''
-N = int(input())
-n = 2
-d=1
+n = int(input())
+num = 2
+den = 1
 i = 0
 j = 0
-pi =1
-while(i < 10):
-    pi*=n/d
+pi = 1
+while(i < n):
+    pi*=num/den
     if(j < 1):
         j+=1
         d+=2
