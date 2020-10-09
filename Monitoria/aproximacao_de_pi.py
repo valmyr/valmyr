@@ -25,5 +25,4 @@ while(i < n):
         j = 0
         num += 2
     i+=1
-
-print(pi*2)
+print("{:.6}".format(pi*2))
