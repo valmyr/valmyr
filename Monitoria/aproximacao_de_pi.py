@@ -20,10 +20,10 @@ while(i < n):
     pi*=num/den
     if(j < 1):
         j+=1
-        d+=2
+        den+=2
     else:
         j = 0
-        n += 2
+        num += 2
     i+=1
 
 print(pi*2)
