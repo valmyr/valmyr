@@ -4,17 +4,17 @@
 
 #include "./Empresa.h"
 
-//iniciando variável estática
-int Empresa::qFuncionario = 0;
 //retornando quantidade atual da lista de funcionários
 int Empresa::getqFuncionarios(){
     return qFuncionario;
 }
 //construtor default
 Empresa::Empresa() {
-    nomeEmpresa = "\n\0";
-    sizeF = 1;
-    CNPJ = "\n\0";
+    //iniciando atributos da class empresa
+    CNPJ = "0\0";
+    nomeEmpresa = "0\0";
+    sizeF = 0;
+    qFuncionario = 0;
 }
 //construtor com parâmetros
 Empresa::Empresa(Funcionario F, string nomeEmpresa, string CNPJ, int sizeF) {
@@ -23,21 +23,24 @@ Empresa::Empresa(Funcionario F, string nomeEmpresa, string CNPJ, int sizeF) {
     this->CNPJ = CNPJ;
     this->nomeEmpresa = nomeEmpresa;
     this->sizeF = sizeF;
+    qFuncionario = 0;
 }
-//-------------------setEmpresa------------------------------------------
+//                      set Empresa
+//-------------------------------------------------------------
 void Empresa::setCNPJ(string CNPJ) {
     this->CNPJ = CNPJ;
 }
-
 void Empresa::setnomeEmpresa(string nomeEmpresa) {
     this->nomeEmpresa = nomeEmpresa;
 }
+//set tamanho da lista de funcionários
 void Empresa::setSize(int sizeF) {
     this->sizeF = sizeF;
     //chamando a função para alocar a memória
     alocarFuncionarios();
 }
-//------------------------getEmpresa----------------------------------------
+//                      get Empresa
+//----------------------------------------------------------------
 string Empresa::getCNPJ() const{
     return CNPJ;
 }
@@ -45,24 +48,25 @@ string Empresa::getnomeEmpresa() const {
     return nomeEmpresa;
 }
 //--------------------------------------------------------------------------
-//inserir funcionários
+
+//inserir funcionário a lista
 void Empresa::inserirFuncionario(Funcionario auxF) {
-    //verifica se a lista de funcionarios esta cheia
+    //verificar se a lista de funcionarios esta cheia
     if(qFuncionario >= sizeF){
         cout<<"Lista cheia";
         return;
     }
-    //caso contrário adiciona o fncionário a lista e incrementa a quantidade de funcionarios
+    //caso contrário adicionar o funcionário a lista e incrementa a quantidade de funcionarios
     F[qFuncionario++] = auxF;
 }
 //alocação de memória
 void Empresa::alocarFuncionarios() {
     //aloca dinâmicamente um quantidade 'sizeF' de pessoas na memória heap
-    this->F = (Funcionario *)new Funcionario[sizeF];
+    this->F = new Funcionario[sizeF];
 }
 //interção com o usuário
 int Empresa::menu(){
-    //interação com o usuário
+    //variável auxiliar para receber o valor que o usuário informou
     int op;
     cout.fill('=');
     cout<<setw(100)<<" "<<endl;
@@ -89,10 +93,10 @@ int Empresa::menu(){
     //retornando a opção infomada
     return op;
 }
-//imprimir lista de funcionários
+//imprimir lista de funcionários cadastrados
 void Empresa::imprimirNomes() const{
     //se quantidade de funcionarios for zero e o usuário tentar imprimir recebe a mensagem
-    //"Lista vazia
+    //"Lista vazia"
     if (not(qFuncionario)){
         cout << "Lista vazia" << endl;
         //sair da função
@@ -101,11 +105,11 @@ void Empresa::imprimirNomes() const{
     cout.fill('=');
     cout<<setw(100)<<" "<<endl;
     cout.fill(' ');
-    //imprimir o nome, salário é o departamento
+    //imprimir o nome, salário é departamento
     for(int i = 0; i < qFuncionario;  i++){
         cout<<"|Nome["<<i+1<<"]: "<<setw(20)
         <<F[i].getNome()<<"|Salario:   "<<setw(5)
-        <<F[i].getSalario()<<"|Departamento:   "<<setw(5)
+        <<F[i].getSalario()<<"BRL|Departamento:   "<<setw(5)
         <<F[i].getDepartamento()<<endl;
     }
     cout.fill('=');
@@ -122,7 +126,7 @@ void Empresa::aumentoSalarioPorderpartamento(int departamento, float porcentagem
             sucesso = true;
         }
     }
-    //se sucesso for igual a true o aumeto foi realizado
+    //se sucesso for igual a true o aumento foi realizado
     if(sucesso){
         cout<<"Aumento realizado com sucesso"<<endl;
         return;

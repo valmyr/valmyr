@@ -27,7 +27,7 @@ int main() {
     //loop
     while(true){
         //quantidade atual de funcionários
-        cout<<"Total de funcionarios: "<<Empresa::getqFuncionarios()<<endl;
+        cout<<"Total de funcionarios: "<<Vtech.getqFuncionarios()<<endl;
         //variável auxiliar que recebe a opção informada pelo usuário na função menu
         int op = Vtech.menu();
         switch(op) {
@@ -35,15 +35,15 @@ int main() {
                 //caso o usuário informe 1 ele escolheu cadastrar um novo funcionário
                 cin.ignore();
                 //solicitando dados do funcionario da empresa
-                cout << "Nome[" << Empresa::getqFuncionarios() + 1 << "]: ";
+                cout << "Nome[" << Vtech.getqFuncionarios() + 1 << "]: ";
                 getline(cin, nomeAux);
-                cout << "Departamento[" << Empresa::getqFuncionarios() + 1 << "]: ";
+                cout << "Departamento[" << Vtech.getqFuncionarios() + 1 << "]: ";
                 cin>> departamentoAux;
                 //iginorando o cararcter '\n'
                 cin.ignore();                //iginorando o cararcter '\n'
-                cout << "Data de Admissao[" << Empresa::getqFuncionarios() + 1 << "]: ";
+                cout << "Data de Admissao[" << Vtech.getqFuncionarios() + 1 << "]: ";
                 getline(cin, dataAdamissaoAux);
-                cout << "Salario[" << Empresa::getqFuncionarios() + 1 << "]: ";
+                cout << "Salario[" << Vtech.getqFuncionarios() + 1 << "]: ";
                 cin >> salario;
                 //enviando dados para serem atribuidos aos atributos
                 temP.setNome(nomeAux);

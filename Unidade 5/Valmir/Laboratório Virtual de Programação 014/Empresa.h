@@ -28,7 +28,7 @@ Obs.: Use o construtor default para as duas classes e o destrutor para limpeza d
 #include "./Funcionario.h"
 class Empresa{
     //atributos
-    //Instanciamento de um ponteiro do objeto funcionário
+    //instanciamento de um ponteiro do objeto funcionário
     Funcionario *F;
     //quantidade de pessoas que serão cadastrados
     int sizeF;
@@ -37,12 +37,11 @@ class Empresa{
     //CNPJ
     string CNPJ;
     //quantidade atual de funcionarios cadastrados
-    static int qFuncionario;
+    int qFuncionario;
     //alocação dinâmica de memória na heap
     void alocarFuncionarios();
 public:
     ///métodos
-
     //construtor
     Empresa();
     Empresa(Funcionario, string, string, int);
@@ -50,21 +49,18 @@ public:
     void setnomeEmpresa(string);
     void setCNPJ(string CNPJ);
     void setSize(int);
-
-    //retorna a quantidada atual de pessoas cadastradas
-    static int getqFuncionarios();
+    //retorna a quantidade atual de pessoas cadastradas
+    int getqFuncionarios();
     //retorna o nome da empresa
     string getnomeEmpresa()const;
     //retorna o CNPJ
     string getCNPJ() const;
-    //adiciona um novo funcionaio
+    //adiciona um novo funcionaio a lista
     void inserirFuncionario(Funcionario);
     //imprime a lista de funcionarios e o departamento e o salário
     void imprimirNomes() const;
     //aumenta o salário por departamento
     void aumentoSalarioPorderpartamento(int departamento, float porcentagem);
-    //comparar duas strings
-    bool compararString(string, string)const;
     //interação com o usuário
     int menu();
     void validacao_de_respostas(int & op);

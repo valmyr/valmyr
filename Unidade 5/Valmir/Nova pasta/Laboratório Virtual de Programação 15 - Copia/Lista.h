@@ -7,8 +7,10 @@ Aluno: Valmir Ferreira da Silva
 Matrícula: 119211110
 Professor: Marcus Salerno
     Laboratório Virtual de Programação 015
-        Crie uma classe que possui como atributos uma lista de nomes e uma variável que indica o seu tamanho máximo. Crie um método para essa classe que ordena os nomes em ordem alfabética, um método que insere um nome na lista e um método que imprime essa lista. Não esqueça de criar a lista dinamicamente no construtor, a partir do valor do tamanho máximo passado por parâmetro. Não esqueça também de liberar no Destrutor o espaço de memória utilizado.
-
+        Crie uma classe que possui como atributos uma lista de nomes e uma variável que indica o seu tamanho máximo. 
+    Crie um método para essa classe que ordena os nomes em ordem alfabética, um método que insere um nome na lista
+    e um método que imprime essa lista. Não esqueça de criar a lista dinamicamente no construtor, a partir do valor
+    do tamanho máximo passado por parâmetro. Não esqueça também de liberar no Destrutor o espaço de memória utilizado.
         Na main, crie uma aplicação para inserir alguns nomes na lista e imprimir essa lista ordenada.
 */
 #ifndef _LISTA_H
@@ -17,7 +19,7 @@ class Lista{
     //ponteiro do tipo string que receberá lista de nomes
     string *listaNomes;
     //atributo que contará a quantidade atual de nomes na lista
-    static int dNomes;
+    int qNomesLista;
     //Atributo que receberá o tamanho máximo da lista
     int sizeL;
 public:
@@ -28,7 +30,7 @@ public:
     //set tamanho máximo
     void setsizeL(int);
     //get quantidade atual da lista
-    static int getdNomes();
+    int getqNomesLista();
     //alocando dinâmicamente a lista de nomes na memória heap
     void alocarLista(void);
     //ordena em ordem alfabética os nomes da lista
