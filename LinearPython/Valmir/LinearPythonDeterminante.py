@@ -13,7 +13,7 @@ def inserirAleatoriamente(sizeMatriz,variacao):
         for j in range(0,matriz.shape[1]):
             matriz[i][j] = random.randint(0,variacao)
     return matriz
-def inserirManualmete(sizeMatriz):
+def inserirManualmente(sizeMatriz):
     matriz = np.empty([sizeMatriz,sizeMatriz],dtype = int)
     for i in range(0,matriz.shape[0]):
         for j in range(0,matriz.shape[1]):
@@ -50,7 +50,7 @@ def main():
     while(op > 2 or op < 1):
         op = int(input("Opcao invalida: "))
     if(op == 1):
-        matriz = inserirManualmete(sizeMatriz)
+        matriz = inserirManualmente(sizeMatriz)
     else:
         op = int(input("Informe a variacao: "))
         matriz = inserirAleatoriamente(sizeMatriz,op+1)
