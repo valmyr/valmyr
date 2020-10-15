@@ -4,7 +4,6 @@ def Exibir(m):
         for j in range(0,m.shape[1]):
             print(f'[{m[i][j]}]',end ='')
         print()
-#Matriz Simétrica
 def matriz_Simetrica(m):
     cont = 0
     for i in range(0,m.shape[0]):
@@ -12,7 +11,6 @@ def matriz_Simetrica(m):
             if(m[i][j] != m[j][i]):
                 return False
     return True
-#Matriz Ant-Simétrica
 def matriz_Ant_Simetrica(m):
     if(matriz_Nula(m)):
         return False
@@ -23,7 +21,6 @@ def matriz_Ant_Simetrica(m):
             if(i == j and m[i][j] != 0):
                 return False
     return True
-#MAtriz Identidade
 def matriz_Identidade(m):
     cont = 0
     for i in range(0,m.shape[0]):
@@ -35,25 +32,21 @@ def matriz_Identidade(m):
     if(cont == m.shape[1]):
         return True
     return False
-#Matriz Nula
 def matriz_Nula(m):
     for i in range(m.shape[0]):
         for j in range(m.shape[1]):
             if(m[i][j] != 0):
                 return False
     return True
+
 def main():
-    #Dimensão da matriz
     ta = int(input("Informe o tamanho da matriz: "))
     m = np.empty([ta,ta], dtype = int)
-    #linhas
     for i in range(0,ta):
-        #Colunas
         for j in range(0, ta):
            m[i][j] = int(input(f'[{i+1}][{j+1}]: '))
     op = False
     print()
-    #Exibir matriz
     Exibir(m)
     print("Matriz >> ")
     if(matriz_Simetrica(m)):
