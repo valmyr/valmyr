@@ -5,7 +5,7 @@ import random
 def exibirMatriz(matriz):
     for i in range(0,matriz.shape[1]):
         for j in range(0, matriz.shape[0]):
-            print("[{}]".format(matriz[i][j]),end=" ")
+            print("{:3d}".format(matriz[i][j]),end=" ")
         print()
 def inserirAleatoriamente(sizeMatriz,variacao):
     matriz = np.empty([sizeMatriz,sizeMatriz],dtype = int)
@@ -26,7 +26,8 @@ def determinante(matriz):
         return matriz[0][0]
     else:
         for i in range(0,matriz.shape[0]):
-           det += matriz[0][i]*pow(-1,i)*determinante(cofatores(matriz,matriz.shape[0],0,i))
+            if(matriz[0][i]):
+                det += matriz[0][i]*pow(-1,i)*determinante(cofatores(matriz,matriz.shape[0],0,i))
         return det
 def cofatores(matriz,sizeMatriz,linhaExcluir, ColunaExcluir):
     mAux = np.empty([sizeMatriz-1,sizeMatriz-1], dtype = int)
@@ -42,27 +43,36 @@ def cofatores(matriz,sizeMatriz,linhaExcluir, ColunaExcluir):
             k+=1
     return mAux
 def main():
+    print("{}".format("=-"*20))
     sizeMatriz = int(input("INFORME A ORDEM DA MATRIZ: "))
-    print("Deseja")
+    print("{}".format("=-"*20))
+    print("{}DESEJA".format(' '*15))
+    print("{}".format("=-"*20))
     print("[1] Inserir Manualmete")
     print("[2] Inserir Aleatoriamete")
+    print("{}".format("=-"*20))
     op = int(input())
+    print("{}".format("=-"*20))
     while(op > 2 or op < 1):
         op = int(input("Opcao invalida: "))
     if(op == 1):
         matriz = inserirManualmente(sizeMatriz)
     else:
-        op = int(input("Informe a variacao: "))
+        op = int(input("Informe a variacao de numeros aleatorios: "))
+        print("{}".format("=-"*20))
         matriz = inserirAleatoriamente(sizeMatriz,op+1)
+    print("{}".format("=-"*20))
     print("\nA matriz informada: \n")
+    print("{}".format("=-"*20))
     exibirMatriz(matriz)
+    print("{}".format("=-"*20))
     print("\nA deteminante da matriz e: \n")
     print("Det(M) = {}".format(determinante(matriz)))
-    print()
+    print("{}".format("=-"*20))
     op = int(input("[0] Reiniciar: "))
-    if(not(op)):
-        os.system("cls")
-        main()
-    return 
+    if(op):
+        return 0    
+    os.system("cls")
+    main() 
 os.system("cls")
 main()

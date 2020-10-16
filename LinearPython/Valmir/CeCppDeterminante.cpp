@@ -26,33 +26,42 @@ int main(){
     cout<<"[2] Inserir manualmente"<<endl;
     cout<<setw(50)<<" "<<endl;
     cin>>op;
+    switch (op){
+        case 2:
             inserirManualmente(&matriz,t);
             break;
+        case 1:
+            cout<<"Informe o limite de variacao dos numeros aleatorios: ";
+            cin>>op;
+            inserirAleatoriamente(&matriz,t,op+1);
+            break;
     }
+     cout<<endl;
      exibirMatriz(matriz,t);
      cout<<endl;
-     cout<<determinanteMatriz(matriz,t);
-     cout<<"[0] Reiniciar?";cin>>op;
-
+     cout<<"A determinante d matriz e"<<endl;
+     cout<<"Det(M) = "<<determinanteMatriz(matriz,t)<<endl<<endl;
+     cout<<endl<<"[0] Reiniciar?";cin>>op;
      if(not(op)){
          system("cls");
          main();
-        }
+    }
      return 0;
 }
 void exibirMatriz(int **matriz, int sizeMatriz){
+    cout.fill('0');
     for(int i = 0; i < sizeMatriz; i++){
         for(int j = 0; j < sizeMatriz; j++){
-            cout<<" "<<matriz[i][j]<<" ";
+            cout<<setw(2)<<" "<<matriz[i][j]<<" ";
         }
         cout<<endl;
     }
 }
 int **alocarMatriz(int sizeMatriz){
     int **mAux;
-    mAux = (int**)malloc(sizeof(int*)*sizeMatriz);
+    mAux = (int**)new int*[sizeMatriz];
     for(int i = 0; i < sizeMatriz; i++){
-       mAux[i] = (int*)malloc(sizeof(int)*sizeMatriz);
+       mAux[i] = (int*)new int[sizeMatriz];
        for(int j = 0; j < sizeMatriz; j++)
             mAux[i][j] = 0;
     }
@@ -81,7 +90,8 @@ int determinanteMatriz(int **m, int sizeMatriz){
         return m[0][0];
     }else{
         for(int j = 0; j < sizeMatriz; j++){    
-            det+=  m[0][j]*pow(-1,j)*determinanteMatriz(cofatores(m,sizeMatriz,0,j),sizeMatriz-1); 
+            if(m[0][j])
+                det+=  m[0][j]*pow(-1,j)*determinanteMatriz(cofatores(m,sizeMatriz,0,j),sizeMatriz-1); 
         } 
         return  det;
     }
