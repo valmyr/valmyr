@@ -5,7 +5,7 @@ def media(v):
         soma+=v[i]
     print('Somatorio dos valores {}'.format(soma))
     print('Media {}'.format(soma/len(v)))
-    return soma
+    return soma/len(v)
 def quadrado(v):
     soma  = 0
     for i in range(0,len(v)):
