@@ -1,0 +1,34 @@
+#include<iostream>
+#include<fstream>
+using namespace std;
+class Pessoa{
+  private:
+    string nome;
+    int idade;
+  public:
+    Pessoa(string = 0, int = 0);
+    void setNome(string);
+    string getNome();
+    void setIdade(int);
+    int getIdade();
+};
+Pessoa::Pessoa(string nome, int idade){
+  this->nome = nome;
+  this->idade = idade;
+}
+void Pessoa::setNome(string nome){
+  this->nome = nome;
+}
+void Pessoa::setIdade(int idade){
+  this->idade = idade;
+}
+string Pessoa::getNome(){
+  return nome;
+}
+int Pessoa::getIdade(){
+  return idade;
+}
+int main(){
+
+  return 0;
+}
