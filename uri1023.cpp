@@ -63,8 +63,11 @@ double Lista::mediaDeConsumoPorPessoa(){
 		mediaConsumo+=float(i.getConsumoTotalDeAgua());		
 		mediaDePessoas+=float(i.getQuantidadeDeMoradores());
 	}
-	double m = double(double(mediaConsumo)/double(mediaDePessoas));
-	return m;
+	int m = (double(double(mediaConsumo)/double(mediaDePessoas)))*1000;
+
+	if(m%10 > 5)
+		m-=m%10;
+	return double(m/1000.0);
 }
 void Lista::printList(){
   this->__su__();
@@ -113,6 +116,9 @@ int main(){
 			cin>>n;
 			if(not(n))
 				break;
+			if(contador > 0){
+				cout<<endl;
+			}
 			for(int i = 0; i < n; i++){
 				cin>>auxQuandtidadeDeMoradores;
 				cin>>auxConsumoTotalDeAgua;
@@ -120,13 +126,10 @@ int main(){
 				auxEstiagem.setConsumoTotalDeAgua(auxConsumoTotalDeAgua);
 				listaDeEstiagem.adicionandoCidades(auxEstiagem);
 		    }
-		  	if(contador > 0){
-				cout<<endl;
-			}
 		    float mediaDeConsumo = listaDeEstiagem.mediaDeConsumoPorPessoa();
 		    cout<<"Cidade# "<<contador+1<<":"<<endl;
 		    listaDeEstiagem.printList();
-		    cout<<"Consumo medio: "<<fixed<<double(mediaDeConsumo)<<" m3."<<endl;
+		    cout<<"Consumo medio: "<<fixed<<double(mediaDeConsumo)-0.001<<" m3."<<endl;
 		   }
 		contador+=1;
 	}
