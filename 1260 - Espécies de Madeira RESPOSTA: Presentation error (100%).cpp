@@ -4,27 +4,29 @@
 #include<iomanip>
 using namespace std;
 int main(){
-    cout.precision(4);
     map<string,int>mapa;map<string,int>::iterator it;
-    float limite, total = 1;
+    cout.precision(4);
+    float limite, total = 0;
     string str;
     cin>>limite;
-    char c;
-    cin>>c;
-    cin.ignore(256,'\n');
+    getchar();
+    getchar();
+    int con = 0;
     for (int i = 0; i < limite;i++){
+            int con = 0;
         while(getline(cin,str)){
             if(str.empty())
+                con+=1;
+            if(str.empty() and con ==1)
                 break;
-            total+=1;
-            try{
+
+            if(!str.empty()){
+                total++;
                 mapa[str]++;
-            }catch(const char &e){
-                mapa[str] = 1;
             }
         }
-        if(i > 1){
-            cout<<"\n";
+        if(i > 0){
+            cout<<endl;
         }
         for(it = mapa.begin(); it != mapa.end(); it++){
             cout<<it->first<<" "<<fixed<<float(it->second*100)/float(total)<<endl;
