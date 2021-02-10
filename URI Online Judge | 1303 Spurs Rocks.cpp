@@ -5,25 +5,31 @@ using namespace std;
 class SpursRocks{
     private:
         int inscricaoNaLiga;
-        int quantidadeDePontosRecebidos;
+        int marcados;
+        int recebidos;
         int pontos;
     public:
         SpursRocks(int = 0,int = 0);
         void setPontos(int);
         void setInscricaoNaLiga(int);
-        void setQuantidadeDePontosRecebidos();
+        void setMarcados(int);
+        void setRecebidos(int);
         int getInscricaoNaLiga()const;
         int getPontos()const;
-        int getQuantidadeDePontosRecebidos()const;
+        int getMarcados()const;
+        int getRecebidos()const;
 };
 SpursRocks::SpursRocks(int inscricaoNaLiga,int pontos){
     this->inscricaoNaLiga = inscricaoNaLiga;
     this->pontos = pontos;
-    this->quantidadeDePontosRecebidos = 0;
-
+    this->marcados = 0;
+    this->recebidos = 0;
 }
-void SpursRocks::setQuantidadeDePontosRecebidos(){
-    this->quantidadeDePontosRecebidos+=1;
+void SpursRocks::setMarcados(int marcados){
+    this->marcados+=marcados;
+}
+void SpursRocks::setRecebidos(int recebidos){
+    this->recebidos+=recebidos;
 }
 int SpursRocks::getInscricaoNaLiga()const{
     return this->inscricaoNaLiga;
@@ -37,60 +43,35 @@ void SpursRocks::setPontos(int pontos){
 void SpursRocks::setInscricaoNaLiga(int inscricaoNaLiga){
     this->inscricaoNaLiga = inscricaoNaLiga;
 }
-int SpursRocks::getQuantidadeDePontosRecebidos()const{
-    return this->quantidadeDePontosRecebidos;
+int SpursRocks::getMarcados()const{
+    return this->marcados;
 }
-class Times{
-    private:
-        vector<SpursRocks>times;
-        int n;
-    public:
-        Times(int = 0);
-        void inserirTime(SpursRocks );
-        void classificaoDeTimes();
-};
-Times::Times(int n){
-    this->n = n;
-}
-void Times::inserirTime(SpursRocks temporario){
-    times.push_back(temporario);
+int SpursRocks::getRecebidos()const{
+    return this->recebidos;
 }
 bool customOrd(SpursRocks c1,SpursRocks c2){
-    if(c1.getPontos() == c1.getPontos()){
-        if(c1.getPontos()/float(c1.getQuantidadeDePontosRecebidos()) == c2.getPontos()/float(c2.getQuantidadeDePontosRecebidos())){
-            if(c1.getQuantidadeDePontosRecebidos() == c2.getQuantidadeDePontosRecebidos()){
-               cout<<"nivel 4"<<endl;    
+    //cout<<c1.getInscricaoNaLiga()<<" inscricaoNaLiga "<<c2.getInscricaoNaLiga()<<endl;
+    //cout<<c1.getPontos()<<" Pontos "<<c2.getPontos()<<endl;
+    //cout<<c1.getMarcados()<<" Pontos "<<c2.getMarcados()<<endl;
+    //cout<<c1.getRecebidos()<<" recebidos "<<c2.getRecebidos()<<endl;
+    //cout<<float(c1.getMarcados())/float(c1.getRecebidos())<<" avange "<<float(c2.getMarcados())/float(c2.getRecebidos())<<endl;
+    if(c1.getPontos() == c2.getPontos()){
+        if(float(c1.getMarcados())/float(c1.getRecebidos()) == float(c2.getMarcados())/float(c2.getRecebidos())){
+            if(c1.getMarcados() == c2.getMarcados()){
+    //            cout<<"Nivel 4"<<endl;
                 return c1.getInscricaoNaLiga() > c2.getInscricaoNaLiga();
             }
-            cout<<"nivel 3"<<endl;
-            return c1.getQuantidadeDePontosRecebidos() < c2.getQuantidadeDePontosRecebidos();    
+    //        cout<<"Nivel 3"<<endl;
+            return c1.getMarcados() < c2.getMarcados();
         }
-        cout<<"nivel 2"<<endl;
-        return c1.getPontos()/float(c1.getQuantidadeDePontosRecebidos()) > c2.getPontos()/float(c2.getQuantidadeDePontosRecebidos());
+    //    cout<<"Nivel 2"<<endl;
+        return float(c1.getMarcados())/float(c1.getRecebidos()) > float(c2.getMarcados())/float(c2.getRecebidos());
     }
-    cout<<"nivel 1"<<endl;
+    //cout<<"Nivel 1"<<endl;
     return c1.getPontos() > c2.getPontos();
 }
-void Times::classificaoDeTimes(){
-    vector<SpursRocks>classif(n);
-    for(int i = 1; i < times.size();i++){
-        if(times[i-1].getPontos() > times[i].getPontos()){
-            classif[times[i-1].getInscricaoNaLiga()-1].setPontos(classif[times[i-1].getInscricaoNaLiga()-1].getPontos()+2);
-            classif[times[i-1].getInscricaoNaLiga()-1].setInscricaoNaLiga(times[i-1].getInscricaoNaLiga());
-            classif[times[i-1].getInscricaoNaLiga()-1].setQuantidadeDePontosRecebidos();
-            classif[times[i].getInscricaoNaLiga()-1].setPontos(classif[times[i].getInscricaoNaLiga()-1].getPontos()+1);
-            classif[times[i].getInscricaoNaLiga()-1].setInscricaoNaLiga(times[i].getInscricaoNaLiga());
-            classif[times[i].getInscricaoNaLiga()].setQuantidadeDePontosRecebidos();
-        }else{
-            classif[times[i].getInscricaoNaLiga()-1].setPontos(classif[times[i].getInscricaoNaLiga()-1].getPontos()+2);
-            classif[times[i].getInscricaoNaLiga()-1].setInscricaoNaLiga(times[i].getInscricaoNaLiga());
-            classif[times[i].getInscricaoNaLiga()].setQuantidadeDePontosRecebidos();
-            classif[times[i-1].getInscricaoNaLiga()-1].setPontos(classif[times[i-1].getInscricaoNaLiga()-1].getPontos()+1);
-            classif[times[i-1].getInscricaoNaLiga()-1].setInscricaoNaLiga(times[i-1].getInscricaoNaLiga());
-            classif[times[i-1].getInscricaoNaLiga()-1].setQuantidadeDePontosRecebidos();
-        }
-    }
-   sort(classif.begin(),classif.end(),customOrd);
+void classificaoDeTimes(vector<SpursRocks>classif){
+    sort(classif.begin(),classif.end(),customOrd);
     for(int i = 0; i < classif.size()-1; i++){
         cout<<classif[i].getInscricaoNaLiga()<<" ";
     }
@@ -101,24 +82,40 @@ int main(){
     int n, numeroDeInscricaoNaLiga, numeroDePontos;
     int contador = 0;
     do{
+        if(contador > 0)
+            cout<<endl;
         cin>>n;
         if(n == 0)
             break;
         int limite = n*(n-1)/2;
         {
-            Times t(n);
+            vector<SpursRocks>classif(n);
             for(int i = 0; i < limite; i++){
                 cin>>numeroDeInscricaoNaLiga;
                 cin>>numeroDePontos;
                 SpursRocks tmp1(numeroDeInscricaoNaLiga,numeroDePontos);
-                t.inserirTime(tmp1);
                 cin>>numeroDeInscricaoNaLiga;
                 cin>>numeroDePontos;
                 SpursRocks tmp2(numeroDeInscricaoNaLiga,numeroDePontos);
-                t.inserirTime(tmp2);
+                classif[tmp1.getInscricaoNaLiga()-1].setMarcados(tmp1.getPontos());
+                classif[tmp1.getInscricaoNaLiga()-1].setRecebidos(tmp2.getPontos());
+                classif[tmp2.getInscricaoNaLiga()-1].setMarcados(tmp2.getPontos());
+                classif[tmp2.getInscricaoNaLiga()-1].setRecebidos(tmp1.getPontos());
+                if (tmp1.getPontos() > tmp2.getPontos()) {
+                    classif[tmp1.getInscricaoNaLiga()-1].setPontos(classif[tmp1.getInscricaoNaLiga()-1].getPontos()+2);
+                    classif[tmp2.getInscricaoNaLiga()-1].setPontos(classif[tmp2.getInscricaoNaLiga()-1].getPontos()+1);
+                    classif[tmp1.getInscricaoNaLiga()-1].setInscricaoNaLiga(tmp1.getInscricaoNaLiga());
+                    classif[tmp2.getInscricaoNaLiga()-1].setInscricaoNaLiga(tmp2.getInscricaoNaLiga());
+                }else{
+                    classif[tmp1.getInscricaoNaLiga()-1].setPontos(classif[tmp1.getInscricaoNaLiga()-1].getPontos()+1);
+                    classif[tmp2.getInscricaoNaLiga()-1].setPontos(classif[tmp2.getInscricaoNaLiga()-1].getPontos()+2);
+                    classif[tmp1.getInscricaoNaLiga()-1].setInscricaoNaLiga(tmp1.getInscricaoNaLiga());
+                    classif[tmp2.getInscricaoNaLiga()-1].setInscricaoNaLiga(tmp2.getInscricaoNaLiga());
+                }
             }
             cout<<"Instancia "<<(contador++)+1<<endl;
-            t.classificaoDeTimes();
+            classificaoDeTimes(classif);
+            classif.clear();
         }
     }while(true);
     return 0;
