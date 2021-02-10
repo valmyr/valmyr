@@ -75,14 +75,13 @@ void classificaoDeTimes(vector<SpursRocks>classif){
     for(int i = 0; i < classif.size()-1; i++){
         cout<<classif[i].getInscricaoNaLiga()<<" ";
     }
-
     cout<<classif[classif.size()-1].getInscricaoNaLiga()<<endl;
 }
 int main(){
     int n, numeroDeInscricaoNaLiga, numeroDePontos;
-    int contador = 0;
+    int contador = 1;
     do{
-        if(contador > 0)
+        if(contador > 1)
             cout<<endl;
         cin>>n;
         if(n == 0)
@@ -91,29 +90,30 @@ int main(){
         {
             vector<SpursRocks>classif(n);
             for(int i = 0; i < limite; i++){
-                cin>>numeroDeInscricaoNaLiga;
-                cin>>numeroDePontos;
-                SpursRocks tmp1(numeroDeInscricaoNaLiga,numeroDePontos);
-                cin>>numeroDeInscricaoNaLiga;
-                cin>>numeroDePontos;
-                SpursRocks tmp2(numeroDeInscricaoNaLiga,numeroDePontos);
-                classif[tmp1.getInscricaoNaLiga()-1].setMarcados(tmp1.getPontos());
-                classif[tmp1.getInscricaoNaLiga()-1].setRecebidos(tmp2.getPontos());
-                classif[tmp2.getInscricaoNaLiga()-1].setMarcados(tmp2.getPontos());
-                classif[tmp2.getInscricaoNaLiga()-1].setRecebidos(tmp1.getPontos());
-                if (tmp1.getPontos() > tmp2.getPontos()) {
-                    classif[tmp1.getInscricaoNaLiga()-1].setPontos(classif[tmp1.getInscricaoNaLiga()-1].getPontos()+2);
-                    classif[tmp2.getInscricaoNaLiga()-1].setPontos(classif[tmp2.getInscricaoNaLiga()-1].getPontos()+1);
-                    classif[tmp1.getInscricaoNaLiga()-1].setInscricaoNaLiga(tmp1.getInscricaoNaLiga());
-                    classif[tmp2.getInscricaoNaLiga()-1].setInscricaoNaLiga(tmp2.getInscricaoNaLiga());
-                }else{
-                    classif[tmp1.getInscricaoNaLiga()-1].setPontos(classif[tmp1.getInscricaoNaLiga()-1].getPontos()+1);
-                    classif[tmp2.getInscricaoNaLiga()-1].setPontos(classif[tmp2.getInscricaoNaLiga()-1].getPontos()+2);
-                    classif[tmp1.getInscricaoNaLiga()-1].setInscricaoNaLiga(tmp1.getInscricaoNaLiga());
-                    classif[tmp2.getInscricaoNaLiga()-1].setInscricaoNaLiga(tmp2.getInscricaoNaLiga());
+                {
+                    cin>>numeroDeInscricaoNaLiga;
+                    cin>>numeroDePontos;
+                    SpursRocks tmp1(numeroDeInscricaoNaLiga,numeroDePontos);
+                    cin>>numeroDeInscricaoNaLiga;
+                    cin>>numeroDePontos;
+                    SpursRocks tmp2(numeroDeInscricaoNaLiga,numeroDePontos);
+                    classif[tmp1.getInscricaoNaLiga()-1].setMarcados(tmp1.getPontos());
+                    classif[tmp1.getInscricaoNaLiga()-1].setRecebidos(tmp2.getPontos());
+                    classif[tmp2.getInscricaoNaLiga()-1].setMarcados(tmp2.getPontos());
+                    classif[tmp2.getInscricaoNaLiga()-1].setRecebidos(tmp1.getPontos());
+                    if (tmp1.getPontos() > tmp2.getPontos()) {
+                        classif[tmp1.getInscricaoNaLiga()-1].setPontos(classif[tmp1.getInscricaoNaLiga()-1].getPontos()+2);
+                        classif[tmp2.getInscricaoNaLiga()-1].setPontos(classif[tmp2.getInscricaoNaLiga()-1].getPontos()+1);
+                        classif[tmp1.getInscricaoNaLiga()-1].setInscricaoNaLiga(tmp1.getInscricaoNaLiga());                                classif[tmp2.getInscricaoNaLiga()-1].setInscricaoNaLiga(tmp2.getInscricaoNaLiga());
+                    }else{
+                        classif[tmp1.getInscricaoNaLiga()-1].setPontos(classif[tmp1.getInscricaoNaLiga()-1].getPontos()+1);
+                        classif[tmp2.getInscricaoNaLiga()-1].setPontos(classif[tmp2.getInscricaoNaLiga()-1].getPontos()+2);
+                        classif[tmp1.getInscricaoNaLiga()-1].setInscricaoNaLiga(tmp1.getInscricaoNaLiga());
+                        classif[tmp2.getInscricaoNaLiga()-1].setInscricaoNaLiga(tmp2.getInscricaoNaLiga());
+                    }
                 }
             }
-            cout<<"Instancia "<<(contador++)+1<<endl;
+            cout<<"Instancia "<<(contador++)<<endl;
             classificaoDeTimes(classif);
             classif.clear();
         }
