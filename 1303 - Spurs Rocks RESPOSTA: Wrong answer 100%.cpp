@@ -104,7 +104,8 @@ int main(){
                     if (tmp1.getPontos() > tmp2.getPontos()) {
                         classif[tmp1.getInscricaoNaLiga()-1].setPontos(classif[tmp1.getInscricaoNaLiga()-1].getPontos()+2);
                         classif[tmp2.getInscricaoNaLiga()-1].setPontos(classif[tmp2.getInscricaoNaLiga()-1].getPontos()+1);
-                        classif[tmp1.getInscricaoNaLiga()-1].setInscricaoNaLiga(tmp1.getInscricaoNaLiga());                                classif[tmp2.getInscricaoNaLiga()-1].setInscricaoNaLiga(tmp2.getInscricaoNaLiga());
+                        classif[tmp1.getInscricaoNaLiga()-1].setInscricaoNaLiga(tmp1.getInscricaoNaLiga());                                
+                        classif[tmp2.getInscricaoNaLiga()-1].setInscricaoNaLiga(tmp2.getInscricaoNaLiga());
                     }else{
                         classif[tmp1.getInscricaoNaLiga()-1].setPontos(classif[tmp1.getInscricaoNaLiga()-1].getPontos()+1);
                         classif[tmp2.getInscricaoNaLiga()-1].setPontos(classif[tmp2.getInscricaoNaLiga()-1].getPontos()+2);
