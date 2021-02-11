@@ -3,38 +3,33 @@
 #include<algorithm>
 using namespace  std;
 int main(){
-    int n, cont;
-    string str1,str2;
-    vector<string>s;
-    while(cin>>n) {
-        cont = 0;
-        for(int i = 0; i < n; i++) {
-            cin>>str1;
-            s.push_back(str1);
+    int limite, economiaDeTonner= 0,mudarDeNumero = 0;
+    string atualizarNumero;
+    vector<string>listaTelefonica;
+    while(cin>>limite) {
+        for(int i = 0; i < limite; i++) {
+            cin>>atualizarNumero;
+            listaTelefonica.push_back(atualizarNumero);
         }
-        sort(s.begin(),s.end());
-        // for(auto i: s){
-        //     cout<<i<<endl;
-        // }
-        str1 = s[0];
-        int c = 0;
-        for (int j = 1; j < s.size(); j++) {
-            for(int k = 0; k < s[j].size(); k++){
-                if (s[j][k] == str1[k]) {
-                    cont += 1;
-                    c++;
+        sort(listaTelefonica.begin(),listaTelefonica.end());
+        atualizarNumero = listaTelefonica[0];
+        for (int j = 1; j < listaTelefonica.size(); j++) {
+            for(int k = 0; k < listaTelefonica[j].size(); k++){
+                if (listaTelefonica[j][k] == atualizarNumero[k]) {
+                    mudarDeNumero++;
                 } else {
-                        if (str1[c] != s[j][c]){
-                            str1 = s[j];
-                            break;
+                        if (atualizarNumero[mudarDeNumero] != listaTelefonica[j][mudarDeNumero]){
+                            atualizarNumero = listaTelefonica[j];
                         }
                     break;
                 }
             }
-            c = 0;
+            economiaDeTonner += mudarDeNumero;
+            mudarDeNumero = 0;
         }
-        s.clear();
-        cout << cont << endl;
+        listaTelefonica.clear();
+        cout << economiaDeTonner << endl;
+        economiaDeTonner = 0;
     }
     return 0;
 }
