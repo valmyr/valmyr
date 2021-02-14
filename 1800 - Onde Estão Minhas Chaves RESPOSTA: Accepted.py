@@ -6,5 +6,5 @@ for i in range(escritoriosNaUltimaSemana):
         print("0")
     else:
         print("1")
-        escritorios.append(qInteiros)
+        escritorios.append(escritorio)
     print(end='\n')
