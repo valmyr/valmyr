@@ -1,6 +1,6 @@
 escritoriosNaUltimaSemana,escritoriosNosUltimosDias = map(int,input().split())
 escritorios = list(map(int,input().split()))
-for i in range(q):
+for i in range(escritoriosNaUltimaSemana):
     escritorio = int(input())
     if(escritorio in escritorios):
         print("0")
