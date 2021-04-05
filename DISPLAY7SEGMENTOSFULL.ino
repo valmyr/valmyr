@@ -36,7 +36,7 @@ void display7segmentos(int catodoComum,int nDecimal){
     delay(2);
 }
 void loop() {
-  //Separando os números da variável contador
+  //Separando os dígitos da variável contador
     display7segmentos(7,(contador/int(pow(10,0)))%10);
     display7segmentos(6,(contador/int(pow(10,1)))%10);
     display7segmentos(5,(contador/int(pow(10,2)))%10);
