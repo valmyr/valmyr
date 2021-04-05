@@ -10,7 +10,7 @@ void setup() {
     }
 
 }
-int dec2bin(int * bin, int dec){
+void dec2bin(int * bin, int dec){
     //ant bug;
     bin[0] = 0;
     bin[1] = 0;
@@ -20,7 +20,7 @@ int dec2bin(int * bin, int dec){
         *(bin++)= dec & 1;//~> dec % 2
         dec >>= 1;//~> dec /= 2
     }
-    return bin;
+    return;
 }
 void display7segmentos(int catodoComum,int nDecimal){
     dec2bin(catodobin,catodoComum);
