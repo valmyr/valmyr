@@ -17,8 +17,8 @@ int dec2bin(int * bin, int dec){
     bin[2] = 0;
     bin[3] = 0;
     while(dec){
-        *(bin++)= dec%2;
-        dec<<=1;
+        *(bin++)= dec & 1;//~> dec % 2
+        dec >>= 1;//~> dec /= 2
     }
     return bin;
 }
