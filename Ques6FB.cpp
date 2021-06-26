@@ -30,7 +30,6 @@ void Data::setMes(const int& mes){
   this->mes = mes;
 }
 void Data::setAno(const int& ano){
-  return;
   this->ano = ano;
 }
 const int& Data::getDia()const{
