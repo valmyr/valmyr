@@ -59,10 +59,10 @@ int main(){
     }
     cout<<"Informe o ano: ";cin>>ano;
     while(ano < 0){
-      cout<<"Ano invalido, Informe novamente: ";cin>>mes;
+      cout<<"Ano invalido, Informe novamente: ";cin>>ano;
     }
     minhaData.setDia(dia);
     minhaData.setMes(mes);
-    minhaData.setMes(mes);
+    minhaData.setMes(ano);
     minhaData.getDataAtual();
 }
