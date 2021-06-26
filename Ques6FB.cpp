@@ -63,6 +63,6 @@ int main(){
     }
     minhaData.setDia(dia);
     minhaData.setMes(mes);
-    minhaData.setMes(ano);
+    minhaData.setAno(ano);
     minhaData.getDataAtual();
 }
