@@ -7,7 +7,7 @@ int main(){
 	int * vetor, *vetorImpar=NULL,*vetorPar=NULL;
 	int size,sizeImpar=0,sizePar=0;
 	srand(time(NULL));
-	printf("Informe tamango do vetor:	"	);
+	printf("Informe tamanho do vetor:	"	);
 	scanf("%d",&size);
 	vetor = alocarVetor(size);
 	for(int i =0;i < size;i++)
