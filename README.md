@@ -18,3 +18,4 @@ Here are some ideas to get you started:
 
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=valmyr&layout=compact&show_icons=true&theme=algolia)](https://github.com/valmyr/valmyr/)
 
+[![Harlok's WakaTime stats](https://github-readme-stats.vercel.app/api/wakatime?username=valmyr)](https://github.com/valmyr/github-readme-stats)
