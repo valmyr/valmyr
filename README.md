@@ -5,7 +5,7 @@
 ![](https://github-readme-stats.vercel.app/api?username=valmyr&theme=transparent&hide_border=false&include_all_commits=true&count_private=true)<br/>
 ![](https://github-readme-streak-stats.herokuapp.com/?user=valmyr&theme=transparent&hide_border=false)<br/>
 ![](https://github-readme-stats.vercel.app/api/top-langs/?username=valmyr&theme=transparent&hide_border=false&include_all_commits=true&count_private=true&layout=compact)
-![snake gif](https://github.com/SEU_USUARIO/SEU_REPOSITORIO/blob/output/github-contribution-grid-snake.svg)
+![snake gif](https://github.com/valmyr/valmyr/blob/output/github-contribution-grid-snake.svg)
 
 ### 🔝 Top Contributed Repo
 ![](https://github-contributor-stats.vercel.app/api?username=valmyr&limit=5&theme=dark&combine_all_yearly_contributions=true)
